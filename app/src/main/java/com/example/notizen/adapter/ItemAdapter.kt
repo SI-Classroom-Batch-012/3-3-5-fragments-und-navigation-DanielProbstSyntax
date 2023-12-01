@@ -7,9 +7,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.notizen.data.Notes
 import com.example.notizen.databinding.ListItemBinding
 import com.example.notizen.ui.ListFragment
+import com.example.notizen.ui.ListFragmentDirections
 
 class ItemAdapter(
-    private val dataset : List<Notes>
+    private var dataset : List<Notes>
 ): RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
 
     inner class ItemViewHolder(val binding: ListItemBinding) : RecyclerView.ViewHolder(binding.root)
@@ -29,7 +30,12 @@ class ItemAdapter(
 
         holder.binding.noteCardMCV.setOnClickListener {
             val navController = holder.binding.root.findNavController()
-            navController.navigate(ListF)
+            navController.navigate(ListFragmentDirections.actionListFragmentToDetailFragment(position))
+
+
+        }
+
+        holder.binding.radioButton.setOnClickListener {
 
 
         }
@@ -40,6 +46,11 @@ class ItemAdapter(
 
     override fun getItemCount(): Int {
         return dataset.size
+    }
+    fun newData(data: List<Notes>)
+    {
+        dataset = data
+        notifyDataSetChanged()
     }
 
 

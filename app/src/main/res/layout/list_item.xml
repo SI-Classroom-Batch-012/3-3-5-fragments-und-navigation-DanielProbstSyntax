@@ -5,11 +5,13 @@
     android:id="@+id/noteCardMCV"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp">
+    android:layout_margin="8dp"
+    android:backgroundTint="#008F1919">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="#00FFFFFF">
 
         <TextView
             android:id="@+id/noteNameTV"
@@ -18,6 +20,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text="NOTE NAME"
+            android:textColor="#E8E8E8"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -32,9 +35,19 @@
             android:ellipsize="end"
             android:maxLines="1"
             android:text="Text Vorschau"
+            android:textColor="#E3E3E3"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/noteNameTV" />
+
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>
